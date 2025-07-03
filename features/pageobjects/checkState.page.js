@@ -7,7 +7,7 @@ class CheckStatePage extends Page {
   }
 
   async selectAccount(account) {
-    await this.numberAccount().click();
+    await this.numberAccount.click();
   }
 
   open() {
