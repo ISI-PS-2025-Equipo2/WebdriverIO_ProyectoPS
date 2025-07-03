@@ -4,7 +4,7 @@ import LoginPage from '../pageobjects/login.page.js';
 import updateContactInfoPage from '../pageobjects/updateContactInfo.page.js';
 
 const pages = {
-  login: loginPage,
+  login: LoginPage,
   register: RegisterPage
 };
 
