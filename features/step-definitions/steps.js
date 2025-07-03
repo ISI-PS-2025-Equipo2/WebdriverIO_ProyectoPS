@@ -2,10 +2,12 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import RegisterPage from '../pageobjects/register.page.js';
 import LoginPage from '../pageobjects/login.page.js';
 import UpdateContactInfoPage from '../pageobjects/updateContactInfo.page.js';
+import CheckState from '../pageobjects/checkState.page.js'
 
 const pages = {
   login: LoginPage,
-  register: RegisterPage
+  register: RegisterPage,
+  checkState: CheckState
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -81,3 +83,18 @@ Then(
     }
   }
 );
+
+//CHECK ACCOUNT STATE
+When(/^I click on an (.*)$/,
+     async (account) => {
+       await CheckState.selectAccount(account);
+});
+
+Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
+     async (details, balance, account, accountType, available) => {
+        if (balance == "$5019.93" && account == 13344 && accountType === "CHECKING" && available == "$5019.93")
+          await expect($(".title")).toBeExisting();
+          await expect($(".title")).toHaveTextContaining(details);
+       } else {
+          await expect($(".title")).toBeExisting();
+});
