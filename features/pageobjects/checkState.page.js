@@ -10,7 +10,7 @@ class CheckStatePage extends Page {
     await this.numberAccount.click();
   }
 
-  open() {
+  open () {
     return super.open('overview');
   } 
 }
