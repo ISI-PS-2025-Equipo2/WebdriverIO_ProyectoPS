@@ -92,7 +92,7 @@ When(/^I click on an (.*)$/,
 
 Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
      async (details, balance, account, accountType, available) => {
-        if (balance == "$5019.93" && account == 13344 && accountType === "CHECKING" && available == "$5019.93") {
+        if (balance == "$9721.93" && account == 13344 && accountType === "CHECKING" && available == "$9721.93") {
           await expect($(".title")).toBeExisting();
           await expect($(".title")).toHaveTextContaining(details);
        } else {
