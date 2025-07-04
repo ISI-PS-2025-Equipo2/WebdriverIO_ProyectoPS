@@ -97,4 +97,5 @@ Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
           await expect($(".title")).toHaveTextContaining(details);
        } else {
           await expect($(".title")).toBeExisting();
+       }
 });
