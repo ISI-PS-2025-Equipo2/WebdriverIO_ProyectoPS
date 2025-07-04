@@ -3,7 +3,7 @@ import Page from "./page.js";
 class CheckStatePage extends Page {
 
   get numberAccount() {
-    return $('//a[normalize-space()='13344']')
+    return $("//a[normalize-space()='13344']")
   }
 
   async selectAccount(account) {
