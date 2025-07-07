@@ -11,5 +11,5 @@ Feature: Para Bank Transfer Feature
 
   Examples:
   |   amount   |   fromAccount   |   toAccount   |         message          |
-  |    100     |      13344      |     13455     |    Transfer Complete!    | 
-  |            |      13344      |     13455     |          Error!          |
+  |    100     |      13344      |     12456     |    Transfer Complete!    | 
+  |            |      13344      |     12456     |          Error!          |
