@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import RegisterPage from '../pageobjects/register.page.js';
 import LoginPage from '../pageobjects/login.page.js';
-import CheckState from '../pageobjects/checkState.page.js';
+import CheckStatePage from '../pageobjects/checkState.page.js';
 import TransferPage from '../pageobjects/transfer.page.js';
 
 const pages = {
