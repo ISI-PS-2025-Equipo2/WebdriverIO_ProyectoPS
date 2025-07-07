@@ -102,7 +102,7 @@ Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
 });
 
 //TRANSFER
-When(/^I write the (.*) to transfer from the account (.*) to the account (.*) and press transfer,
+When(/^I write the (.*) to transfer from the account (.*) to the account (.*) and press transfer$/,
      async (amount, fromAccount, toAccount) => {
        await TransferPage.transfer(amount, fromAccount, toAccount);
 });
