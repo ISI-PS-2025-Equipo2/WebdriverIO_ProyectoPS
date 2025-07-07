@@ -3,12 +3,14 @@ import RegisterPage from '../pageobjects/register.page.js';
 import LoginPage from '../pageobjects/login.page.js';
 import CheckStatePage from '../pageobjects/checkState.page.js';
 import TransferPage from '../pageobjects/transfer.page.js';
+import LoanPage from '../pageobjects/loan.page.js';
 
 const pages = {
   login: LoginPage,
   register: RegisterPage,
   checkState: CheckStatePage,
-  transfer: TransferPage
+  transfer: TransferPage,
+  loan: LoanPage
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -108,6 +110,25 @@ When(/^I write the (.*) to transfer from the account (.*) to the account (.*) an
 });
 
 Then(/^I see (.*)$/, 
+     async (message) => {
+       if (message == "Error!") {
+         //Invalid input
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
+       } else {
+         //Valid input
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
+       }
+});
+
+//LOAN
+When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/
+     async (loanAmount, downPayment, account) => {
+       await LoanPage.requestLoan(loanAmount, downPayment, account);
+  });
+
+Then(/^I see a message saying (.*)$/,
      async (message) => {
        if (message == "Error!") {
          //Invalid input
