@@ -10,7 +10,7 @@ class RegisterPage extends Page {
 
    get registBtn() {
     
-    return $('//*[@id="loginPanel"]/p[2]/a');
+    return $('//a[normalize-space()="Register"]');
   }
    get inputFirstName() {
     return $('//*[@id="customer.firstName"]');
@@ -58,7 +58,7 @@ class RegisterPage extends Page {
 
    get btnSubmit() {
     return $(
-      "//input[@value='Register']"
+      '//input[@value="Register"]'
     );
   }
 
