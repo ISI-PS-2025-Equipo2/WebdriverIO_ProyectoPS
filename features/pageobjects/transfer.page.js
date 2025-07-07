@@ -1,4 +1,4 @@
-import page from "./page.js";
+import Page from "./page.js";
 
 class TransferPage extends Page {
   get inputAmount() {
