@@ -58,7 +58,7 @@ class RegisterPage extends Page {
 
    get btnSubmit() {
     return $(
-      '//*[@id="customerForm"]/table/tbody/tr[13]/td[2]/input'
+      "//input[@value='Register']"
     );
   }
 
