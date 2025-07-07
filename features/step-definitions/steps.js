@@ -7,8 +7,8 @@ import TransferPage from '../pageobjects/transfer.page.js';
 const pages = {
   login: LoginPage,
   register: RegisterPage,
-  checkState: CheckState,
-  transferPage: TransferPage
+  checkState: CheckStatePage,
+  transfer: TransferPage
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -88,7 +88,7 @@ Then(
 //CHECK ACCOUNT STATE
 When(/^I click on an (.*)$/,
      async (account) => {
-       await CheckState.selectAccount(account);
+       await CheckStatePage.selectAccount(account);
 });
 
 Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
