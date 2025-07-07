@@ -33,4 +33,4 @@ class TransferPage extends Page {
   }
 }
 
-return default new TransferPage();
+export default new TransferPage();
