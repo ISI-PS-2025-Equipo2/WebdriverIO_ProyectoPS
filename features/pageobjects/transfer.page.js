@@ -17,7 +17,7 @@ class TransferPage extends Page {
     return $("//input[@value='Transfer']")
   }
 
-  async transferPage (
+  async transfer (
     amount,
     fromAccount,
     toAccount
