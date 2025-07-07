@@ -22,6 +22,7 @@ class TransferPage extends Page {
     fromAccount,
     toAccount
   ) {
+    await this.inputAmount.waitForEnabled();
     await this.inputAmount.setValue(amount);
     await this.inputFromAccount.setValue(fromAccount);
     await this.inputToAccount.setValue(toAccount);
