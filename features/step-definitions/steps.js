@@ -123,7 +123,7 @@ Then(/^I see (.*)$/,
 });
 
 //LOAN
-When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/
+When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/,
      async (loanAmount, downPayment, account) => {
        await LoanPage.requestLoan(loanAmount, downPayment, account);
   });
