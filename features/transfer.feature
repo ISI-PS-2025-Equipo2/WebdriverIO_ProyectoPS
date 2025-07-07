@@ -6,10 +6,10 @@ Feature: Para Bank Transfer Feature
 
   Scenario Outline: As a user, I can make transactions from one account to another
     Given I am on the transfer page
-    When I write the <amount> to transfer from the <account1> to <account2> and press transfer
+    When I write the <amount> to transfer from the account <fromAccount> to the account <toAccount> and press transfer
     Then I see <message>
 
   Examples:
-  |   amount   |   account1   |   account2   |         message          |
-  |    100     |    13344     |    13455     |    Transfer Complete!    | 
-  |            |    13344     |    13455     |          Error!          |
+  |   amount   |   fromAccount   |   toAccount   |         message          |
+  |    100     |      13344      |     13455     |    Transfer Complete!    | 
+  |            |      13344      |     13455     |          Error!          |
