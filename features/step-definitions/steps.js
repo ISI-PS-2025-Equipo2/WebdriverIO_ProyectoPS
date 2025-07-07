@@ -1,13 +1,14 @@
 import { Given, When, Then } from '@wdio/cucumber-framework';
 import RegisterPage from '../pageobjects/register.page.js';
 import LoginPage from '../pageobjects/login.page.js';
-import UpdateContactInfoPage from '../pageobjects/updateContactInfo.page.js';
-import CheckState from '../pageobjects/checkState.page.js'
+import CheckState from '../pageobjects/checkState.page.js';
+import TransferPage from '../pageobjects/transfer.page.js';
 
 const pages = {
   login: LoginPage,
   register: RegisterPage,
-  checkState: CheckState
+  checkState: CheckState,
+  transferPage: TransferPage
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -97,5 +98,24 @@ Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
           await expect($(".title")).toHaveTextContaining(details);
        } else {
           await expect($(".title")).toBeExisting();
+       }
+});
+
+//TRANSFER
+When(/^I write the (.*) to transfer from the account (.*) to the account (.*) and press transfer,
+     async (amount, fromAccount, toAccount) => {
+       await TransferPage.transfer(amount, fromAccount, toAccount);
+});
+
+Then(/^I see (.*)$/, 
+     async (message) => {
+       if (message == "Error!") {
+         //Invalid input
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
+       } else {
+         //Valid input
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
        }
 });
