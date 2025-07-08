@@ -18,7 +18,7 @@ class LoanPage extends Page {
     return $("//input[@value='Apply Now']")
   }
 
-  get logoutLink () {
+  get btnLogout () {
     return $("//a[normalize-space()='Log Out']");
   }
 
@@ -40,7 +40,7 @@ class LoanPage extends Page {
   }
 
   async logout {
-    await this.logoutLink.click();
+    await this.btnLogout.click();
   }
 
   open () {
