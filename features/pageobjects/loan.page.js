@@ -39,10 +39,6 @@ class LoanPage extends Page {
     await this.btnApplyNow.click();
   }
 
-  async logout {
-    await this.btnLogout.click();
-  }
-
   open () {
     return super.open('requestloan');
   }
