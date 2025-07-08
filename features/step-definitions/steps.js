@@ -141,7 +141,6 @@ Then(/^I see a message saying (.*)$/,
          //Valid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
-         await $("//a[normalize-space()='Log Out']").click();
          await LoanPage.logout();
        }
 });
