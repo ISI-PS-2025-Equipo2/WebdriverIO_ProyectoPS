@@ -141,3 +141,8 @@ Then(/^I see a message saying (.*)$/,
          await expect($(".title")).toHaveTextContaining(message);
        }
 });
+
+Then(/^I log out$/
+     async () => {
+       await LoanPage.logout();
+  });
