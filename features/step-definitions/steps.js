@@ -136,9 +136,14 @@ Then(/^I see a message saying (.*)$/,
        if (message == "An internal error has occurred and has been logged") {
          //Invalid input
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
+       } else if (message == "Denied") {
+         //Invalid downpayment
+         await expect($("//td[@id='loanStatus']")).toBeExisting();
+         await expect($("//td[@id='loanStatus']").toHaveContainingText(message);
        } else {
          //Valid input
-         await expect($("//a[@id='newAccountId']")).toBeExisting();
+         await expect($("//td[@id='loanStatus']")).toBeExisting();
+         await expect($("//td[@id='loanStatus']").toHaveContainingText(message);
        }
 });
 
