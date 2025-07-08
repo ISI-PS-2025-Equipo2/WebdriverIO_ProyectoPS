@@ -113,12 +113,12 @@ Then(/^I see (.*)$/,
      async (message) => {
        if (message == "Error!") {
          //Invalid input
-         await expect($("h1")).toBeExisting();
-         await expect($("h1")).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
        } else {
          //Valid input
-         await expect($("h1")).toBeExisting();
-         await expect($("h1")).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
        }
 });
 
