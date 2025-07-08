@@ -29,7 +29,7 @@ class TransferPage extends Page {
     await this.inputFromAccount.selectByAttribute('value', fromAccount);
 
     await this.inputToAccount.waitForEnabled();
-    await this.inputToAccount.slectoByAttribute('value', toAccount);
+    await this.inputToAccount.selectByAttribute('value', toAccount);
     
     await this.btnTransfer.click();
   }
