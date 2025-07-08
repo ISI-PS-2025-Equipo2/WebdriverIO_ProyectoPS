@@ -11,6 +11,6 @@ Feature: Para Bank Transfer Feature
     And I log out
 
   Examples:
-  |   amount   |   fromAccount   |   toAccount   |         message          |
-  |    100     |      13344      |     12456     |    Transfer Complete!    | 
-  |            |      13344      |     12456     |          Error!          |
+  |   amount   |   fromAccount   |   toAccount   |                              message                                    |
+  |    100     |      13344      |     12456     |  $100.00 has been transferred from account #13344 to account #12456.    | 
+  |            |      13344      |     12456     |         An internal error has occurred and has been logged              |
