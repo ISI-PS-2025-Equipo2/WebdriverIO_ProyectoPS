@@ -8,8 +8,9 @@ Feature: Para Bank Transfer Feature
     Given I am on the transfer page
     When I write the <amount> to transfer from the account <fromAccount> to the account <toAccount> and press transfer
     Then I see <message>
+    And I log out
 
   Examples:
   |   amount   |   fromAccount   |   toAccount   |         message          |
-  |    100     |      13344      |     13677     |    Transfer Complete!    | 
-  |            |      13344      |     13677     |          Error!          |
+  |    100     |      13344      |     12456     |    Transfer Complete!    | 
+  |            |      13344      |     12456     |          Error!          |
