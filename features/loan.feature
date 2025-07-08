@@ -8,6 +8,7 @@ Feature: Para Bank Loan Feature
     Given I am on the requestloan page
     When I input a loan amount of <loanAmount>, a down payment of <downPayment> from <account> and press apply now
     Then I see a message saying <message>
+    And I log out
 
   Examples:
     |   loanAmount   |   downPayment   |   account   |        message         |
