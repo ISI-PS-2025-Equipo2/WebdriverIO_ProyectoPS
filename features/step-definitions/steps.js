@@ -134,9 +134,11 @@ Then(/^I see a message saying (.*)$/,
          //Invalid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
+         await $("//a[normalize-space()='Log Out']").click();
        } else {
          //Valid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
+         await $("//a[normalize-space()='Log Out']").click();
        }
 });
