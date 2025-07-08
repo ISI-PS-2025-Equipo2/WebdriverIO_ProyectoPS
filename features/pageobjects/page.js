@@ -11,6 +11,16 @@ export default class Page {
   open(path) {
     return browser.url(`${config.baseUrl}/${path}.htm`);
   }
+
+   get btnLogout () {
+    return $("//a[normalize-space()='Log Out']");
+  }
+
+  async logout () {
+    if (await this.btnLogout.isDisplayed()) {
+      await this.btnLogout.click();
+    }
+  }
 }
 
 export const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
