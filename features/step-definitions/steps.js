@@ -10,7 +10,7 @@ const pages = {
   register: RegisterPage,
   checkState: CheckStatePage,
   transfer: TransferPage,
-  loan: LoanPage
+  requestloan: LoanPage
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
