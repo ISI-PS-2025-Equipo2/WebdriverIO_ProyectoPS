@@ -12,6 +12,6 @@ Feature: Para Bank Check State Feature
 
     Examples:
       |        details        |   balance   |   account   |   accountType   |   available   |
-      |     Account Details   |   $104.00   |    25221    |     SAVINGS     |    $104.00    |
-      |     Account Details   |   $311.50   |    22113    |    CHECKING     |    $311.50    |
-      |     Account Details   |  	$100.00   |    25332    |      LOAN       |    $100.00    |
+      |     Account Details   |    $4.00    |    14232    |     SAVINGS     |     $4.00     |
+      |     Account Details   |   $4394.93  |    13344    |    CHECKING     |    $4394.93   |
+      |     Account Details   |  	$100.00   |    16563    |      LOAN       |    $100.00    |
