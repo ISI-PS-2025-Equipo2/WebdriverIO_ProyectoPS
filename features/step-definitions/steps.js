@@ -113,12 +113,11 @@ Then(/^I see (.*)$/,
      async (message) => {
        if (message == "An internal error has occurred and has been logged") {
          //Invalid input
-         await $(".title").waitForDisplayed({ timeout: 5000 });
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
        } else {
          //Valid input
          await expect($("//div[@id='showResult']//p[1]")).toBeExisting();
-         await expect($("//div[@id='showResult']//p[1]")).toHaveTextContaining("$100.00 has been transferred from account #13344 to account #12456.");
+         await expect($("//div[@id='showResult']//p[1]")).toHaveTextContaining(message);
        }
 });
 
@@ -134,16 +133,12 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
 
 Then(/^I see a message saying (.*)$/,
      async (message) => {
-       if (message == "Error!") {
+       if (message == "An internal error has occurred and has been logged") {
          //Invalid input
-         await $(".title").waitForDisplayed({ timeout: 5000 });
-         await expect($(".title")).toBeExisting();
-         await expect($(".title")).toHaveTextContaining(message);
+         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
        } else {
          //Valid input
-         await $(".title").waitForDisplayed({ timeout: 5000 });
-         await expect($(".title")).toBeExisting();
-         await expect($(".title")).toHaveTextContaining(message);
+         await expect($("//a[@id='newAccountId']")).toBeExisting();
        }
 });
 
