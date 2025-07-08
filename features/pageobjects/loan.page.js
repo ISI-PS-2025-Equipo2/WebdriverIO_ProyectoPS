@@ -17,11 +17,7 @@ class LoanPage extends Page {
   get btnApplyNow () {
     return $("//input[@value='Apply Now']")
   }
-
-  get btnLogout () {
-    return $("//a[normalize-space()='Log Out']");
-  }
-
+  
   async requestLoan (
     loanAmount,
     downPayment,
@@ -37,11 +33,6 @@ class LoanPage extends Page {
     await this.inputFromAccount.selectByAttribute('value', account);
     
     await this.btnApplyNow.click();
-  }
-
-  async logout () {
-    await this.btnLogout.waitForDisplayed();
-    await this.btnLogout.click();
   }
 
   open () {
