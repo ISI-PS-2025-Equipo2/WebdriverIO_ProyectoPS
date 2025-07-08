@@ -143,7 +143,7 @@ Then(/^I see a message saying (.*)$/,
        } else {
          //Valid input
          await expect($("//td[@id='loanStatus']")).toBeExisting();
-         await expect($("//td[@id='loanStatus']").toHaveContainingText(message);
+         await expect($("//td[@id='loanStatus']")).toHaveContainingText(message);
        }
 });
 
