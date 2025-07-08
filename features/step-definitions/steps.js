@@ -123,6 +123,10 @@ Then(/^I see (.*)$/,
        }
 });
 
+Then(/^I log out$/, async () => {
+    await TransferPage.logout();
+  });
+
 //LOAN
 When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/,
      async (loanAmount, downPayment, account) => {
@@ -142,7 +146,7 @@ Then(/^I see a message saying (.*)$/,
        }
 });
 
-Then(/^I log out$/
+Then(/^I log out$/,
      async () => {
        await LoanPage.logout();
   });
