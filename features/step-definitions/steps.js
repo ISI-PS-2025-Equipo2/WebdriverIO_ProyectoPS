@@ -115,7 +115,6 @@ Then(/^I see (.*)$/,
          //Invalid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
-         await LoanPage.logout();
        } else {
          //Valid input
          await expect($(".title")).toBeExisting();
