@@ -17,9 +17,8 @@ export default class Page {
   }
 
   async logout () {
-    if (await this.btnLogout.isDisplayed()) {
-      await this.btnLogout.click();
-    }
+    await this.btnLogout.waitForClickable();
+    await this.btnLogout.click();
   }
 }
 
