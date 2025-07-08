@@ -139,11 +139,11 @@ Then(/^I see a message saying (.*)$/,
        } else if (message == "Denied") {
          //Invalid downpayment
          await expect($("//td[@id='loanStatus']")).toBeExisting();
-         await expect($("//td[@id='loanStatus']").toHaveContainingText(message);
+         await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
        } else {
          //Valid input
          await expect($("//td[@id='loanStatus']")).toBeExisting();
-         await expect($("//td[@id='loanStatus']")).toHaveContainingText(message);
+         await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
        }
 });
 
