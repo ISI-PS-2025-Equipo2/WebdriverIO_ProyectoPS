@@ -24,8 +24,13 @@ class TransferPage extends Page {
   ) {
     await this.inputAmount.waitForEnabled();
     await this.inputAmount.setValue(amount);
-    await this.inputFromAccount.setValue(fromAccount);
-    await this.inputToAccount.setValue(toAccount);
+
+    await this.inputFromAccount.waitForEnabled();
+    await this.inputFromAccount.selectByAttribute('value', fromAccount);
+
+    await this.inputToAccount.waitForEnabled();
+    await this.inputToAccount.slectoByAttribute('value', toAccount);
+    
     await this.btnTransfer.click();
   }
 
