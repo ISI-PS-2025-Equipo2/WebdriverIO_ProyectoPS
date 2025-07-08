@@ -3,7 +3,7 @@ import Page from './page.js';
 class LoanPage extends Page {
   
   get inputLoanAmount () {
-    return $("//input[@id='amount']");
+    return $('//input[@id="amount"]');
   }
 
   get inputDownPayment () {
@@ -23,9 +23,15 @@ class LoanPage extends Page {
     downPayment,
     account
   ) {
+    await this.inputLoanAmount.waitForEnabled();
     await this.inputLoanAmount.setValue(loanAmount);
+
+    await this.inputDownPayment.waitForEnabled();
     await this.inputDownPayment.setValue(downPayment);
+
+    await this.inputFromAccount.waitForEnabled();
     await this.inputFromAccount.selectByAttribute('value', account);
+    
     await this.btnApplyNow.click();
   }
 
