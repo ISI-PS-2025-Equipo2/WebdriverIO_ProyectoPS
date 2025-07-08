@@ -113,10 +113,12 @@ Then(/^I see (.*)$/,
      async (message) => {
        if (message == "Error!") {
          //Invalid input
+         await $(".title").waitForDisplayed({ timeout: 5000 });
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
        } else {
          //Valid input
+         await $(".title").waitForDisplayed({ timeout: 5000 });
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
        }
@@ -136,10 +138,12 @@ Then(/^I see a message saying (.*)$/,
      async (message) => {
        if (message == "Error!") {
          //Invalid input
+         await $(".title").waitForDisplayed({ timeout: 5000 });
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
        } else {
          //Valid input
+         await $(".title").waitForDisplayed({ timeout: 5000 });
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
        }
