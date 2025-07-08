@@ -111,7 +111,7 @@ When(/^I write the (.*) to transfer from the account (.*) to the account (.*) an
 
 Then(/^I see (.*)$/, 
      async (message) => {
-       if (message == "An internal error has occurred and has been logged") {
+       if (message == "An internal error has occurred and has been logged.") {
          //Invalid input
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
        } else {
@@ -133,7 +133,7 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
 
 Then(/^I see a message saying (.*)$/,
      async (message) => {
-       if (message == "An internal error has occurred and has been logged") {
+       if (message == "An internal error has occurred and has been logged.") {
          //Invalid input
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
        } else if (message == "Denied") {
