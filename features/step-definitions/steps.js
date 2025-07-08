@@ -120,7 +120,6 @@ Then(/^I see (.*)$/,
          //Valid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
-         await LoanPage.logout();
        }
 });
 
@@ -136,11 +135,9 @@ Then(/^I see a message saying (.*)$/,
          //Invalid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
-         await LoanPage.logout();
        } else {
          //Valid input
          await expect($(".title")).toBeExisting();
          await expect($(".title")).toHaveTextContaining(message);
-         await LoanPage.logout();
        }
 });
