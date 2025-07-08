@@ -12,6 +12,6 @@ Feature: Para Bank Loan Feature
 
   Examples:
     |   loanAmount   |   downPayment   |   account   |                     message                         |
-    |      100       |       100       |    14121    |                    Approved                         |
-    |      100       |        1        |    14121    |                     Denied                          |
-    |      100       |                 |    14121    | An internal error has occurred and has been logged. |
+    |      100       |       100       |    13344    |                    Approved                         |
+    |      100       |        1        |    13344    |                     Denied                          |
+    |      100       |                 |    13344    | An internal error has occurred and has been logged. |
