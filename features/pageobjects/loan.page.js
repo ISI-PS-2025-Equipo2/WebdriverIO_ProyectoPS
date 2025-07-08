@@ -25,7 +25,7 @@ class LoanPage extends Page {
   ) {
     await this.inputLoanAmount.setValue(loanAmount);
     await this.inputDownPayment.setValue(downPayment);
-    await this.inputFromAccount.setValue(account);
+    await this.inputFromAccount.selectByAttribute('value', account);
     await this.btnApplyNow.click();
   }
 
