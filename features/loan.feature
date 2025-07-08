@@ -11,6 +11,7 @@ Feature: Para Bank Loan Feature
     And I log out
 
   Examples:
-    |   loanAmount   |   downPayment   |   account   |        message         |
-    |      100       |        10       |    13344    | Loan Request Processed |
-    |      100       |                 |    13344    |         Error!         |
+    |   loanAmount   |   downPayment   |   account   |                     message                         |
+    |      100       |       100       |    13344    |                    Approved                         |
+    |      100       |        1        |    13344    |                     Denied                          |
+    |      100       |                 |    13344    | An internal error has occurred and has been logged. |
