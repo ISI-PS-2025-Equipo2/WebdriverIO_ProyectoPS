@@ -8,7 +8,6 @@ Feature: Para Bank Check State Feature
     Given I am on the checkState page
     When I click on an <account>
     Then I can see the <details> as <account>, <accountType>, <balance> and <available>
-    And I log out
 
     Examples:
       |        details        |     balance     |   account   |   accountType   |   available   |
