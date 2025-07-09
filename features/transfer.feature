@@ -10,6 +10,6 @@ Feature: Para Bank Transfer Feature
     Then I see <message>
 
   Examples:
-  |   amount   |   fromAccount   |   toAccount   |                             message                                   |
-  |    100     |      13344      |     14232     |  $100.00 has been transferred from account #13344 to account #14232.  | 
-  |            |      13344      |     14232     |          An internal error has occurred and has been logged           |
+  |   amount   |   fromAccount   |   toAccount   |       message        |
+  |    100     |      13344      |     14232     |  Transfer Complete!  | 
+  |            |      13344      |     14232     |       Error!         |
