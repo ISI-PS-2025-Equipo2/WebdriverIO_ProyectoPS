@@ -90,6 +90,7 @@ Then(
 //CHECK ACCOUNT STATE
 When(/^I click on an (.*)$/,
      async (account) => {
+       await CheckStatePage.getAvailableAccounts();
        await CheckStatePage.selectAccount(account);
 });
 
