@@ -90,8 +90,8 @@ Then(/^I see a message saying (.*)$/,
      async (message) => {
        if (message == "Invalid") {
          //Invalid loan
-         await expect($('.title')).toBeExisting();
-         await expect($('.title')).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await LoanPage.logout();
        //} else if (message == "You do not have sufficient funds for the given down payment.") {
          //Not enough funds
@@ -100,8 +100,8 @@ Then(/^I see a message saying (.*)$/,
          //await LoanPage.logout();
        } else {
          //Valid loan
-         await expect($('.title')).toBeExisting();
-         await expect($('.title')).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await LoanPage.logout();
        }
 });
