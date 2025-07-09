@@ -16,17 +16,17 @@ class CheckStatePage extends Page {
 
   async selectAccount(account) {
     if (account == 13344) {
-      await expect(numberSavingsAccount).toBeExisting();
+      await expect(this.numberSavingsAccount).toBeExisting();
       await this.numberSavingsAccount.waitForClickable();
       await this.numberSavingsAccount.click();
       
     } else if (account == 12345) {
-      await expect(numberCheckingAccount).toBeExisting();
+      await expect(this.numberCheckingAccount).toBeExisting();
       await this.numberCheckingAccount.waitForClickable();      
       await this.numberCheckingAccount.click();
       
     } else {
-      await expect(numberLoanAccount).toBeExisting();
+      await expect(this.numberLoanAccount).toBeExisting();
       await this.numberLoanAccount.waitForClickable();
       await this.numberLoanAccount.click();
       
