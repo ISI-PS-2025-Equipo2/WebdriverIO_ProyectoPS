@@ -7,5 +7,5 @@ Feature: Para Bank Login Feature
 
     Examples:
       | username        | password | message           |
-      | invalidUsername | password | Error!            |
+      | invalidUsername | password | Invalid            |
       | john            | demo     | Accounts Overview |
