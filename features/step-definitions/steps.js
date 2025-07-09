@@ -116,16 +116,14 @@ Then(/^I see (.*)$/,
        if (message == "An internal error has occurred and has been logged.") {
          //Invalid input
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
+         await TransferPage.logout();
        } else {
          //Valid input
          await expect($("//div[@id='showResult']//p[1]")).toBeExisting();
          await expect($("//div[@id='showResult']//p[1]")).toHaveTextContaining(message);
+         await TransferPage.logout();
        }
 });
-
-Then(/^I log out$/, async () => {
-    await TransferPage.logout();
-  });
 
 //LOAN
 When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/,
