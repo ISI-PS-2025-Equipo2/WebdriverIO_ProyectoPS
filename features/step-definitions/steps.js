@@ -98,11 +98,8 @@ Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
         if (accountType === "CHECKING" || "SAVINGS" || "LOAN") {
           await expect($(".title")).toBeExisting();
           await expect($(".title")).toHaveTextContaining(details);
+          await CheckStatePage.logout();
        }
-});
-
-Then(/^I log out$/, async () => {
-  await CheckStatePage.logout();
 });
 
 //TRANSFER
@@ -136,18 +133,16 @@ Then(/^I see a message saying (.*)$/,
        if (message == "An internal error has occurred and has been logged.") {
          //Invalid input
          await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
-       } else if (message == "Denied") {
+         await LoanPage.logout();
+       //} else if (message == "Denied") {
          //Invalid downpayment
-         await expect($("//td[@id='loanStatus']")).toBeExisting();
-         await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
+         //await expect($("//td[@id='loanStatus']")).toBeExisting();
+         //await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
        } else {
          //Valid input
-         await expect($("//td[@id='loanStatus']")).toBeExisting();
-         await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
+         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toBeExisting();
+         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toHaveTextContaining(message);
+         await LoanPage.logout();
        }
 });
 
-Then(/^I log out$/,
-     async () => {
-       await LoanPage.logout();
-  });
