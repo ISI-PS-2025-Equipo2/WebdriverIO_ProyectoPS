@@ -110,17 +110,15 @@ When(/^I write the (.*) to transfer from the account (.*) to the account (.*) an
 
 Then(/^I see (.*)$/, 
      async (message) => {
-       if (message == "An internal error has occurred and has been logged") {
+       if (message == "Error!") {
          //Invalid transfer
-         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
-         await expect($(
-           "//p[contains(text(),'An internal error has occurred and has been logged')]"
-         )).toHaveTextContaining(message);
+         await expect($('//*[@id="showError"]/h1')).toBeExisting();
+         await expect($('//*[@id="showError"]/h1')).toHaveTextContaining(message);
          await TransferPage.logout();
        } else {
          //Valid transfer
-         await expect($("//div[@id='showResult']//p[1]")).toBeExisting();
-         await expect($("//div[@id='showResult']//p[1]")).toHaveTextContaining(message);
+         await expect($('//*[@id="showResult"]/h1')).toBeExisting();
+         await expect($('//*[@id="showResult"]/h1')).toHaveTextContaining(message);
          await TransferPage.logout();
        }
 });
@@ -133,10 +131,10 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
 
 Then(/^I see a message saying (.*)$/,
      async (message) => {
-       if (message == "An internal error has ocurred and has beenn logged.") {
+       if (message == "Error!") {
          //Invalid loan
-         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
-         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toHaveTextContaining(message);
+         await expect($('//*[@id="requestLoanError"]/h1')).toBeExisting();
+         await expect($('//*[@id="requestLoanError"]/h1')).toHaveTextContaining(message);
          await LoanPage.logout();
        //} else if (message == "You do not have sufficient funds for the given down payment.") {
          //Not enough funds
@@ -146,8 +144,8 @@ Then(/^I see a message saying (.*)$/,
        } else {
          //Valid loan
          await expect($(".loanRequestApproved")).toBeExisting();
-         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toBeExisting();
-         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toHaveTextContaining(message);
+         await expect($('//*[@id="requestLoanResult"]/h1')).toBeExisting();
+         await expect($('//*[@id="requestLoanResult"]/h1')).toHaveTextContaining(message);
          await LoanPage.logout();
        }
 });
