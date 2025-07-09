@@ -11,7 +11,7 @@ Feature: Para Bank Check State Feature
     And I log out
 
     Examples:
-      |        details        |   balance   |   account   |   accountType   |   available   |
-      |     Account Details   |   $104.00   |    17784    |     SAVINGS     |    $104.00    |
-      |     Account Details   |   $300.00   |    13899    |    CHECKING     |    $300.00    |
-      |     Account Details   |  	$10.00    |    16674    |      LOAN       |     $10.00    |
+      |        details        |     balance     |   account   |   accountType   |   available   |
+      |     Account Details   |  -$19998816.90  |    13344    |     SAVINGS     |     $0.00     |
+      |     Account Details   |    -$2300.00    |    12345    |    CHECKING     |     $0.00     |
+      |     Account Details   |    	 $0.00      |    13899    |      LOAN       |     $0.00     |
