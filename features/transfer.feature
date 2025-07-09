@@ -12,5 +12,5 @@ Feature: Para Bank Transfer Feature
 
   Examples:
   |   amount   |   fromAccount   |   toAccount   |                              message                                    |
-  |    100     |      13899      |     13788     |  $100.00 has been transferred from account #13899 to account #13788.    | 
-  |            |      13899      |     13788     |         An internal error has occurred and has been logged              |
+  |    100     |      13344      |     12345     |  $100.00 has been transferred from account #13344 to account #12345.    | 
+  |            |      13344      |     12345     |         An internal error has occurred and has been logged              |
