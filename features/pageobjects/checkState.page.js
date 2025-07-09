@@ -3,15 +3,15 @@ import Page from "./page.js";
 class CheckStatePage extends Page {
 
   get numberSavingsAccount() {
-    return $("//a[normalize-space()='17784']")
+    return $("a[href='activity.htm?id=17784']")
   }
 
   get numberCheckingAccount() {
-    return $("//a[normalize-space()='13899']")
+    return $("a[href='activity.htm?id=13899']")
   }
 
   get numberLoanAccount() {
-    return $("//a[normalize-space()='16674']")
+    return $("a[href='activity.htm?id=16674']")
   }
 
   async selectAccount(account) {
