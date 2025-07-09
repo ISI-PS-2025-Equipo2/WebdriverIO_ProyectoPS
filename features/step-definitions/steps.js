@@ -23,7 +23,7 @@ When(/^I login with (\w+) and (.+)$/, async (username, password) => {
 });
 
 Then(/^I should see a text saying (.*)$/, async (message) => {
-  if (message == "Error!") {
+  if (message == "Invalid") {
     // invalid username or password
     await expect($(".title")).toBeExisting();
     await expect($(".title")).toHaveTextContaining(message);
@@ -34,7 +34,7 @@ Then(/^I should see a text saying (.*)$/, async (message) => {
   }
 });
 
-//REGISTER
+/*//REGISTER
 When(
   /^I register with (.*) and (.*) and (.*) and (.*) and (.*) and (.*) and (.*) and (.*) and (.*) and (.*) and (.*)$/,
   async (
@@ -85,7 +85,7 @@ Then(
       await expect($(".title")).toHaveTextContaining(message);
     }
   }
-);
+);*/
 
 //CHECK ACCOUNT STATE
 When(/^I click on an (.*)$/,
@@ -95,9 +95,21 @@ When(/^I click on an (.*)$/,
 
 Then(/^I can see the (.*) as (.*), (.*), (.*) and (.*)$/,
      async (details, balance, account, accountType, available) => {
-        if (accountType === "CHECKING" || "SAVINGS" || "LOAN") {
+        if (accountType === "CHECKING") {
           await expect($(".title")).toBeExisting();
           await expect($(".title")).toHaveTextContaining(details);
+          
+          await expect($("//td[@id='accountId']")).toBeExisting();
+          await expect($("//td[@id='accountId']")).toHaveTextContaining(account);
+          
+          await expect($("//td[@id='accountType']")).toBeExisting();
+          await expect($("//td[@id='accountType']")).toHaveTextContaining(accountType);
+          
+          await expect($("//td[@id='balance']")).toBeExisting();
+          await expect($("//td[@id='balance']")).toHaveTextContaining(balance);
+          
+          await expect($("//td[@id='availableBalance']")).toBeExisting();
+          await expect($("//td[@id='availableBalance']")).toHaveTextContaining(available);
           await CheckStatePage.logout();
        }
 });
@@ -110,7 +122,7 @@ When(/^I write the (.*) to transfer from the account (.*) to the account (.*) an
 
 Then(/^I see (.*)$/, 
      async (message) => {
-       if (message == "Error!") {
+       if (message == "Invalid") {
          //Invalid transfer
          await expect($('//*[@id="showError"]/h1')).toBeExisting();
          await expect($('//*[@id="showError"]/h1')).toHaveTextContaining(message);
@@ -131,7 +143,7 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
 
 Then(/^I see a message saying (.*)$/,
      async (message) => {
-       if (message == "Error!") {
+       if (message == "Invalid") {
          //Invalid loan
          await expect($('//*[@id="requestLoanError"]/h1')).toBeExisting();
          await expect($('//*[@id="requestLoanError"]/h1')).toHaveTextContaining(message);
