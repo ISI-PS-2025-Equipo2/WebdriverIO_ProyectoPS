@@ -33,6 +33,14 @@ class CheckStatePage extends Page {
     }
   }
 
+  async getAvailableAccounts() {
+  const accounts = await $$("//table[@id='accountTable']//a");
+  const accountNumbers = await Promise.all(accounts.map(acc => acc.getText()));
+  console.log("📄 Cuentas disponibles actualmente:", accountNumbers);
+  return accountNumbers;
+}
+
+
   open () {
     return super.open('overview');
   } 
