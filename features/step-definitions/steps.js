@@ -86,7 +86,7 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
        await LoanPage.requestLoan(loanAmount, downPayment, account);
   });
 
-Then(/^I see a message saying (.*)$/,
+Then(/^I see a message saying (.+)$/,
      async (message) => {
        if (message == "Invalid") {
          //Invalid loan
