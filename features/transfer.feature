@@ -8,7 +8,6 @@ Feature: Para Bank Transfer Feature
     Given I am on the transfer page
     When I write the <amount> to transfer from the account <fromAccount> to the account <toAccount> and press transfer
     Then I see <message>
-    Then I log out
 
   Examples:
   |   amount   |   fromAccount   |   toAccount   |                              message                                    |
