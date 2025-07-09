@@ -110,14 +110,15 @@ When(/^I write the (.*) to transfer from the account (.*) to the account (.*) an
 
 Then(/^I see (.*)$/, 
      async (message) => {
-       if (message == "An internal error has occurred and has been logged.") {
+       if (message == "Error!") {
          //Invalid input
-         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining();
          await TransferPage.logout();
        } else {
          //Valid input
-         await expect($("//div[@id='showResult']//p[1]")).toBeExisting();
-         await expect($("//div[@id='showResult']//p[1]")).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await TransferPage.logout();
        }
 });
@@ -130,9 +131,10 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
 
 Then(/^I see a message saying (.*)$/,
      async (message) => {
-       if (message == "An internal error has occurred and has been logged.") {
+       if (message == "Error!") {
          //Invalid input
-         await expect($("//p[contains(text(),'An internal error has occurred and has been logged')]")).toBeExisting();
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await LoanPage.logout();
        //} else if (message == "Denied") {
          //Invalid downpayment
@@ -140,8 +142,8 @@ Then(/^I see a message saying (.*)$/,
          //await expect($("//td[@id='loanStatus']")).toHaveTextContaining(message);
        } else {
          //Valid input
-         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toBeExisting();
-         await expect($("//p[normalize-space()='Congratulations, your loan has been approved.']")).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await LoanPage.logout();
        }
 });
