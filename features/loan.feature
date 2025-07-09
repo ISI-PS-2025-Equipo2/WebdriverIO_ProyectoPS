@@ -10,6 +10,6 @@ Feature: Para Bank Loan Feature
     Then I see a message saying <message>
 
   Examples:
-    |   loanAmount   |   downPayment   |   account   |                   message                     |
-    |      100       |        1        |    12345    | Congratulations, your loan has been approved. |
-    |                |       100       |    12345    |                   Invalid                     |
+    |   loanAmount   |   downPayment   |   account   |        message         |
+    |      100       |        1        |    12345    | Loan Request Processed |
+    |                |       100       |    12345    |        Invalid         |
