@@ -10,6 +10,7 @@ Feature: Para Bank Loan Feature
     Then I see a message saying <message>
 
   Examples:
-    |   loanAmount   |   downPayment   |   account   |          message         |
-    |      100       |       100       |    13344    |  Loan Request Processed  |
-    |       0        |       100       |    13344    |          Error!          |
+    |   loanAmount   |   downPayment   |   account   |                            message                            |
+    |      100       |        1        |    13344    |         Congratulations, your loan has been approved.         |
+    |      100       |       100       |    13344    |  You do not have sufficient funds for the given down payment. |
+    |       0        |       100       |    13344    |      An internal error has occurred and has been logged.      |
