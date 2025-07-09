@@ -2,12 +2,26 @@ import Page from "./page.js";
 
 class CheckStatePage extends Page {
 
-  get numberAccount() {
-    return $("//a[normalize-space()='13344']")
+  get numberSavingsAccount() {
+    return $("//a[normalize-space()='17784']")
+  }
+
+  get numberCheckingAccount() {
+    return $("//a[normalize-space()='13899']")
+  }
+
+  get numberLoanAccount() {
+    return $("//a[normalize-space()='16674']")
   }
 
   async selectAccount(account) {
-    await this.numberAccount.click();
+    if (account == 17784) {
+      await this.numberSavingsAccount.click();
+    } else if (account == 13899) {
+      await this.numberCheckingAccount.click();
+    } else {
+      await this.numberLoanAccount.click();
+    }
   }
 
   open () {
