@@ -86,12 +86,12 @@ When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press
        await LoanPage.requestLoan(loanAmount, downPayment, account);
   });
 
-Then(/^I see a message saying (.+)$/,
+Then(/^I see a message saying (.*)$/,
      async (message) => {
        if (message == "Invalid") {
          //Invalid loan
-         await expect($(".title")).toBeExisting();
-         await expect($(".title")).toHaveTextContaining(message);
+         await expect($("//div[@id='requestLoanError']/h1")).toBeExisting();
+         await expect($("//div[@id='requestLoanError']/h1")).toHaveTextContaining(message);
          await LoanPage.logout();
        //} else if (message == "You do not have sufficient funds for the given down payment.") {
          //Not enough funds
@@ -100,8 +100,8 @@ Then(/^I see a message saying (.+)$/,
          //await LoanPage.logout();
        } else {
          //Valid loan
-         await expect($(".title")).toBeExisting();
-         await expect($(".title")).toHaveTextContaining(message);
+         await expect($("//div[@id='requestLoanResult']/h1")).toBeExisting();
+         await expect($("//div[@id='requestLoanResult']/h1")).toHaveTextContaining(message);
          await LoanPage.logout();
        }
 });
