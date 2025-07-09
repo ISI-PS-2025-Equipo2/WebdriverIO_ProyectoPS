@@ -100,8 +100,8 @@ Then(/^I see a message saying (.+)$/,
          //await LoanPage.logout();
        } else {
          //Valid loan
-         await expect($("//div[@id='loanRequestApproved']/p[1]")).toBeExisting();
-         await expect($("//div[@id='loanRequestApproved']/p[1]")).toHaveTextContaining(message);
+         await expect($(".title")).toBeExisting();
+         await expect($(".title")).toHaveTextContaining(message);
          await LoanPage.logout();
        }
 });
