@@ -12,4 +12,4 @@ Feature: Para Bank Loan Feature
   Examples:
     |   loanAmount   |   downPayment   |   account   |         message          |
     |      100       |        1        |    13344    |  Loan Request Processed  |
-    |       0        |       100       |    13344    |         Error!           |
+    |                |       100       |    13344    |        Invalid           |
