@@ -2,13 +2,11 @@ import { Given, When, Then } from '@wdio/cucumber-framework';
 import LoginPage from '../pageobjects/login.page.js';
 import CheckStatePage from '../pageobjects/checkState.page.js';
 import TransferPage from '../pageobjects/transfer.page.js';
-import LoanPage from '../pageobjects/loan.page.js';
 
 const pages = {
   login: LoginPage,
   checkState: CheckStatePage,
-  transfer: TransferPage,
-  requestloan: LoanPage
+  transfer: TransferPage
 };
 
 Given(/^I am on the (\w+) page$/, async (page) => {
@@ -79,30 +77,3 @@ Then(/^I see (.*)$/,
          await TransferPage.logout();
        }
 });
-
-//LOAN
-When(/^I input a loan amount of (.*), a down payment of (.*) from (.*) and press apply now$/,
-     async (loanAmount, downPayment, account) => {
-       await LoanPage.requestLoan(loanAmount, downPayment, account);
-  });
-
-Then(/^I see a message saying (.*)$/,
-     async (message) => {
-       if (message == "Invalid") {
-         //Invalid loan
-         await expect($("//div[@id='requestLoanError']/h1")).toBeExisting();
-         await expect($("//div[@id='requestLoanError']/h1")).toHaveTextContaining(message);
-         await LoanPage.logout();
-       //} else if (message == "You do not have sufficient funds for the given down payment.") {
-         //Not enough funds
-         //await expect($(".error")).toBeExisting();
-         //await expect($(".error")).toHaveTextContaining(message);
-         //await LoanPage.logout();
-       } else {
-         //Valid loan
-         await expect($("//div[@id='requestLoanResult']/h1")).toBeExisting();
-         await expect($("//div[@id='requestLoanResult']/h1")).toHaveTextContaining(message);
-         await LoanPage.logout();
-       }
-});
-
